@@ -8,15 +8,18 @@ function userid_validation(min , max) {
 	if(id.length===0)
 		{
 			alert("User ID should not be empty!");
+			document.getElementsByName("userid")[0].focus();
 
 		}
 	else if (id.length<5)
 	{
 		alert("should be more than 5 characters");
+		document.getElementsByName("userid")[0].focus();
 
 	}
      else if  (id.length>12){
      	alert("should be less than 12 characters");
+     	document.getElementsByName("userid")[0].focus();
      }
      else
      {
@@ -30,16 +33,18 @@ function passid_validation(min , max) {
 	if(id.length===0)
 		{
 			alert("User password should not be empty!");
-
+            document.getElementsByName("passid")[0].focus();
 		}
 	else if (id.length<7)
 	{
 		alert("should be more than 7 characters");
+		document.getElementsByName("passid")[0].focus();
 
 	}
      else if  (id.length>12)
      {
      	alert("should be less than 12 characters");
+     	document.getElementsByName("passid")[0].focus();
      }
      else
      {
@@ -89,15 +94,18 @@ function allLetter()
       else if (input_email.length >= 50)
     {
      alert("Shoul be less than 50 characters");
+     document.getElementsByName("email")[0].focus();
      return (false);
     }
 
-       else if (/^[a-zA-Z-0-9]+@+[a-zA-Z-0-9]+.+[a-zA-Z-0-9]/.test(input_email)) {  
+       else if (/^[a-zA-Z0-9_\.\-]+@+[a-zA-Z]+.+[a-zA-Z]/.test(input_email)) {  
   	alert ("valid email address");
+  	//document.getElementsByName("email")[0].focus();
     return (true);  
   }  
     else {
     	alert("You have entered an invalid email format!"); 
+    	document.getElementsByName("email")[0].focus();
     	return (false) ; 
     }
    
