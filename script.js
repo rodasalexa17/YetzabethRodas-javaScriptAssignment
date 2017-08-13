@@ -16,7 +16,7 @@ function userid_validation(min , max) {
 
 	}
      else if  (id.length>12){
-     	alert("should be less than el12 characters");
+     	alert("should be less than 12 characters");
      }
      else
      {
@@ -49,29 +49,64 @@ function passid_validation(min , max) {
 
 
 function allLetter()
-
 {
+	var inputfield = document.getElementsByName("username")[0].value;
 
-	var uname = document.getElementsByName("username")[0];
-    var letters = /^[A-Za-z]+$/;
-    console.log(uname);
-    if(uname.value.match(letters))
+    if (inputfield == "")
+{
+	alert ("Error: Input Name is empty!");
+	document.getElementsByName("username")[0].focus();
+	return false;
+}
 
-    {
-
-        return true;
-
-    }
-
-    else
-
-    {
-
-        alert('Username must have alphabet characters only');
-
+    if (!/^[a-zA-Z ]*$/g.test(inputfield)) {
+        alert("User’s name should have alphabet characters only!");
+        document.getElementsByName("username")[0].focus();
         return false;
-
+    }
+    
+    else if (inputfield.length >= 50)
+    {
+    	alert("characters allowed exceeded, should be less than 50");
+    	document.getElementsByName("username")[0].focus();
+        return false;
+    }
+    else (inputfield.length <= 50)
+    {
+    	document.getElementsByName("email")[0].focus();
     }
 }
+   function ValidateEmail() 
+{  
+    var input_email= document.getElementsByName("email")[0].value;
+     if (input_email == "")
+{
+	alert ("Error: Input email is empty!");
+	document.getElementsByName("email")[0].focus();
+	return false;
+}
+
+      else if (input_email.length >= 50)
+    {
+     alert("Shoul be less than 50 characters");
+     return (false);
+    }
+
+       else if (/^[a-zA-Z-0-9]+@+[a-zA-Z-0-9]+.+[a-zA-Z-0-9]/.test(input_email)) {  
+  	alert ("valid email address");
+    return (true);  
+  }  
+    else {
+    	alert("You have entered an invalid email format!"); 
+    	return (false) ; 
+    }
+   
+} 
+
+
+    	
+    
+
+
 
 
